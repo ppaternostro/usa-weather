@@ -1,30 +1,40 @@
-# UsaWeather
+# usa-weather
+
+An Angular based USA weather application. This application uses two free APIs to retrieve USA based address geocode information and to retrieve weather information for the acquired USA address geocode. The free APIs are USA government provided APIs that don't require a user account or an API key to use. The geocode information is retrieved using the [USA Census Geocoder](https://www.census.gov/programs-surveys/geography/technical-documentation/complete-technical-documentation/census-geocoder.html) API while the weather information is retrieved using the [National Weather Service](https://www.weather.gov/documentation/services-web-api#) API.
+
+## Background
+
+This application was created with [Angular Material](https://material.angular.dev/) components and uses the [Tailwind CSS](https://tailwindcss.com/) library for application layout and CSS styling. After cloning the project, ensure both [Node.js&reg; and NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) are installed. To pull in the project's dependencies, from a terminal window in the project's root folder, run
+
+```bash
+npm install
+```
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.0.
 
-## Development server
+## Running the application
 
-To start a local development server, run:
+To start a local development server, from a terminal window in the project's root folder, run:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+or
 
 ```bash
-ng generate component component-name
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Once the server is running, open your browser and navigate to `http://localhost:4200/`.
 
-```bash
-ng generate --help
-```
+<img width="1366" height="670" alt="Main Window" src="https://github.com/user-attachments/assets/b0bef989-94bc-410d-82f3-dcb75d119b67" />
+
+All three fields are required to generate a weather forecast. Enter the USA based address information which will enable the **Submit** button. Click on the **Submit** button to generate a weather forecast.
+
+<img width="1366" height="670" alt="Weather Forecast" src="https://github.com/user-attachments/assets/98585953-f182-4916-bb3e-e28a66dd04cb" />
+
+A scrollable forecast list will display for the next seven days. To clear the results click on the **Clear** button.
 
 ## Building
 
@@ -56,4 +66,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 
 ## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [Angular Signals: Complete Guide](https://blog.angular-university.io/angular-signals/)
+- [Angular @if: Complete Guide](https://blog.angular-university.io/angular-if/)
+- [Angular @for: Complete Guide](https://blog.angular-university.io/angular-for/)
+- [Angular Standalone Components: Complete Guide](https://blog.angular-university.io/angular-standalone-components/)
