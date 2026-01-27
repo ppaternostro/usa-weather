@@ -1,0 +1,65 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()" class="flex flex-row gap-4">
+  <div class="container flex gap-4 flex-wrap">
+    <mat-form-field appearance="outline" class="w-full">
+      <mat-label>Street</mat-label>
+      <input
+        id="street"
+        name="street"
+        matInput
+        type="text"
+        [required]="true"
+        placeholder="Enter street"
+        [(ngModel)]="address().street"
+      />
+    </mat-form-field>
+  </div>
+  <div class="container flex gap-4 flex-wrap">
+    <mat-form-field appearance="outline" class="w-full">
+      <mat-label>City</mat-label>
+      <input
+        id="city"
+        name="city"
+        matInput
+        type="text"
+        [required]="true"
+        placeholder="Enter city"
+        [(ngModel)]="address().city"
+      />
+    </mat-form-field>
+  </div>
+  <div class="container flex gap-4 flex-wrap">
+    <mat-form-field appearance="outline" class="w-full">
+      <mat-label>State</mat-label>
+      <mat-select [required]="true" id="state" name="state" [(ngModel)]="address().state">
+        @for (state of states; track state.abbreviation) {
+          <mat-option [value]="state.abbreviation">{{ state.name }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="container flex gap-4 flex-wrap">
+    <div class="container flex space-x-4">
+      <button id="submit" [disabled]="!form.valid || submitting()" mat-raised-button type="submit">
+        Submit
+      </button>
+      <button
+        id="clear"
+        (click)="onClear(form)"
+        [disabled]="submitting()"
+        mat-raised-button
+        type="button"
+      >
+        Clear
+      </button>
+    </div>
+  </div>
+</form>
+@if (submitting()) {
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}
+
+@if (forecast$ | async; as forecast) {
+  @for (period of forecast.properties.periods; track period.number) {
+    <app-forecast-period [period]="period" />
+  }
+}

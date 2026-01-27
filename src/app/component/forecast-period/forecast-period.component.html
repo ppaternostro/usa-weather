@@ -1,0 +1,18 @@
+<div class="card-container">
+  <mat-card id="forecast" class="max-w-4xl mx-auto p-8 border-2 rounded-lg shadow-md bg-white">
+    <mat-card-header class="flex justify-between">
+      <mat-card-title id="card-title">{{ period()?.name }}</mat-card-title>
+      <mat-card-subtitle id="card-sub-title">{{
+        period()?.startTime | date: 'longDate'
+      }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content class="p-8 grow">
+      <img src="{{ period()?.icon }}" />
+      <h2 class="font-bold text-lg">Detailed Forecast</h2>
+      <p id="detailed-forecast">
+        {{ period()?.detailedForecast }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
