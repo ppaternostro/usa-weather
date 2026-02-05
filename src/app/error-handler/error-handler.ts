@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { ErrorHandler, Injectable, NgZone } from '@angular/core';
+import { ErrorHandler, Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ErrorService } from '../service/error/error.service';
 
@@ -10,7 +10,6 @@ export class GlobalErrorHandler extends ErrorHandler {
   constructor(
     private errorService: ErrorService,
     private snackBar: MatSnackBar,
-    private ngZone: NgZone,
   ) {
     super();
   }
@@ -32,9 +31,6 @@ export class GlobalErrorHandler extends ErrorHandler {
       stackTrace = this.errorService.getClientStack(error);
     }
 
-    // Executing in the Angular Zone fixes anomalous side effects (e.g., double display)
-    this.ngZone.run(() => {
-      this.snackBar.open(`${title} - ${message}`, 'Close');
-    });
+    this.snackBar.open(`${title} - ${message}`, 'Close');
   }
 }

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, NgZone, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -51,7 +51,6 @@ export class AddressComponent {
     private geocodeService: GeocodeService,
     private pointService: PointService,
     private forecastService: ForecastService,
-    private ngZone: NgZone,
     private snackBar: MatSnackBar,
   ) {}
 
@@ -69,10 +68,7 @@ export class AddressComponent {
       ),
       // Handle the error thrown from the switchMap
       catchError((error) => {
-        // Executing in the Angular Zone fixes anomalous side effects (e.g., double display)
-        this.ngZone.run(() => {
-          this.snackBar.open(`Error - ${error.message}`, 'Close', { duration: 3000 });
-        });
+        this.snackBar.open(`Error - ${error.message}`, 'Close');
 
         // Return a fallback empty observable
         return of();

@@ -1,4 +1,8 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+import {
+  ApplicationConfig,
+  provideBrowserGlobalErrorListeners,
+  provideZonelessChangeDetection,
+} from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { provideHttpClient, withJsonpSupport } from '@angular/common/http';
@@ -10,5 +14,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     // Add JSONP support
     provideHttpClient(withJsonpSupport()),
+    // Zoneless application
+    provideZonelessChangeDetection(),
   ],
 };
