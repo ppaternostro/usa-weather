@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HttpHandler, provideHttpClient } from '@angular/common/http';
 import {
   HttpTestingController,
   provideHttpClientTesting,
@@ -20,7 +19,7 @@ describe('PointService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [HttpHandler, provideHttpClient(), provideHttpClientTesting()],
+      providers: [provideHttpClientTesting()],
     });
     service = TestBed.inject(PointService);
     backEnd = TestBed.inject(HttpTestingController);

@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HttpHandler, provideHttpClient } from '@angular/common/http';
 import {
   HttpTestingController,
   provideHttpClientTesting,
@@ -26,7 +25,7 @@ describe('GeocodeService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [HttpHandler, provideHttpClient(), provideHttpClientTesting()],
+      providers: [provideHttpClientTesting()],
     });
     service = TestBed.inject(GeocodeService);
     backEnd = TestBed.inject(HttpTestingController);
