@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ForecastPeriodComponent } from './forecast-period.component';
-import { mockPeriod } from '../../mock/model/weather/forecast/mock-period';
-import { By } from '@angular/platform-browser';
 import { HarnessLoader } from '@angular/cdk/testing';
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
-import { MatCardHarness } from '@angular/material/card/testing';
-import { MatCardModule } from '@angular/material/card';
 import { DatePipe } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { MatCardHarness } from '@angular/material/card/testing';
+import { By } from '@angular/platform-browser';
+import { mockPeriod } from '../../mock/model/weather/forecast/mock-period';
+import { ForecastPeriodComponent } from './forecast-period.component';
 
 describe('ForecastPeriodComponent', () => {
   let component: ForecastPeriodComponent;
   let fixture: ComponentFixture<ForecastPeriodComponent>;
   let loader: HarnessLoader;
-  let datePipe = new DatePipe('en-US');
+  const datePipe = new DatePipe('en-US');
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

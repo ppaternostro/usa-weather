@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -42,17 +42,15 @@ import { ForecastPeriodComponent } from '../forecast-period/forecast-period.comp
   styleUrl: './address.component.css',
 })
 export class AddressComponent {
+  private geocodeService = inject(GeocodeService);
+  private pointService = inject(PointService);
+  private forecastService = inject(ForecastService);
+  private snackBar = inject(MatSnackBar);
+
   address = signal<Address>({} as Address);
   submitting = signal<boolean>(false);
   forecast$?: Observable<Forecast>;
   states = usaStates;
-
-  constructor(
-    private geocodeService: GeocodeService,
-    private pointService: PointService,
-    private forecastService: ForecastService,
-    private snackBar: MatSnackBar,
-  ) {}
 
   onSubmit(): void {
     this.submitting.set(true);
