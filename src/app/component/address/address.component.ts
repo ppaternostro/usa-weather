@@ -39,7 +39,7 @@ import { ForecastPeriodComponent } from '../forecast-period/forecast-period.comp
     MatProgressBarModule,
   ],
   templateUrl: './address.component.html',
-  styleUrl: './address.component.css',
+  styleUrl: './address.component.scss',
 })
 export class AddressComponent {
   private geocodeService = inject(GeocodeService);

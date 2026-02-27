@@ -7,7 +7,7 @@ import { Period } from '../../model/weather/forecast/period.model';
   selector: 'app-forecast-period',
   imports: [MatCardModule, CommonModule],
   templateUrl: './forecast-period.component.html',
-  styleUrl: './forecast-period.component.css',
+  styleUrl: './forecast-period.component.scss',
 })
 export class ForecastPeriodComponent {
   period = input<Period>();

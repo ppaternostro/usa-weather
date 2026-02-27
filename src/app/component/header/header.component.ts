@@ -9,7 +9,7 @@ import { AboutDialogComponent } from '../about-dialog/about-dialog.component';
   selector: 'app-header',
   imports: [MatToolbarModule, MatButtonModule, MatIconModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css',
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
   private dialog = inject(MatDialog);

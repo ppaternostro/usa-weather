@@ -11,6 +11,6 @@ import {
   selector: 'app-about-dialog',
   imports: [MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose, MatButtonModule],
   templateUrl: './about-dialog.component.html',
-  styleUrl: './about-dialog.component.css',
+  styleUrl: './about-dialog.component.scss',
 })
 export class AboutDialogComponent {}
