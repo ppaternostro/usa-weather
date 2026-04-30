@@ -6,6 +6,7 @@ import {
   TestRequest,
 } from '@angular/common/http/testing';
 import { Subscription } from 'rxjs';
+import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { mockForecast } from '../../../../mock/model/weather/forecast/mock-forecast';
 import { mockGrid } from '../../../../mock/model/weather/point/mock-grid';
 import { Forecast } from '../../../../model/weather/forecast/forecast.model';

@@ -6,6 +6,7 @@ import { DatePipe } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatCardHarness } from '@angular/material/card/testing';
 import { By } from '@angular/platform-browser';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { mockPeriod } from '../../mock/model/weather/forecast/mock-period';
 import { ForecastPeriodComponent } from './forecast-period.component';
 

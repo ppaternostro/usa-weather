@@ -6,6 +6,7 @@ import {
   TestRequest,
 } from '@angular/common/http/testing';
 import { Subscription } from 'rxjs';
+import { beforeEach, describe, expect, it } from 'vitest';
 import { mockGeocode } from '../../../../mock/model/geocode/mock-geocode';
 import { mockPoint } from '../../../../mock/model/weather/point/mock-point';
 import { Point } from '../../../../model/weather/point/point.model';
