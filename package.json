@@ -38,11 +38,11 @@
     "@angular/cli": "^21.2.9",
     "@angular/compiler-cli": "^21.2.11",
     "@eslint/js": "^10.0.1",
-    "@tailwindcss/postcss": "^4.2.1",
+    "@tailwindcss/postcss": "^4.2.4",
     "angular-eslint": "^21.2.0",
     "jsdom": "^28.1.0",
-    "postcss": "^8.5.8",
-    "tailwindcss": "^4.2.1",
+    "postcss": "^8.5.14",
+    "tailwindcss": "^4.2.4",
     "typescript": "~5.9.3",
     "vitest": "^4.0.18"
   }
