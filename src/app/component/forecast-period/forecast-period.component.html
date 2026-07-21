@@ -3,7 +3,7 @@
     <mat-card-header class="flex justify-between">
       <mat-card-title id="card-title">{{ period()?.name }}</mat-card-title>
       <mat-card-subtitle id="card-sub-title">{{
-        period()?.startTime | date: 'longDate'
+        $safeNavigationMigration(period()?.startTime) | date: 'longDate'
       }}</mat-card-subtitle>
     </mat-card-header>
 
